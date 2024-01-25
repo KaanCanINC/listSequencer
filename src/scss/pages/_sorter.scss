@@ -1,0 +1,71 @@
+@use "../abstracts" as *;
+@use "../components" as *;
+
+.sorter {
+  display: flex;
+  justify-content: center;
+  font-family: $font-family;
+  background-color: $base-color;
+  height: 100vh;
+
+  &__wrapper {
+    text-align: center;
+  }
+
+  &__header {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: red;
+
+    & a {
+      color: black;
+    }
+  }
+
+  &__logo {
+    margin: 0;
+    cursor: pointer;
+    letter-spacing: $header-letter-spacing;
+    font-size: $header-font-size;
+    font-weight: $header-font-weight;
+  }
+
+  &__divider {
+    width: 100%;
+    left: 0;
+    position: fixed;
+  }
+
+  &__content {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    &--output-container,
+    &--input-container {
+      border: 2px solid #000;
+      margin: 20px;
+      border-radius: 10px;
+      padding: 10px 0;
+    }
+
+    &-textarea {
+      background: transparent;
+      border: none;
+      resize: none;
+      font-size: 16px;
+      font-weight: 500;
+      max-height: 80vh;
+      &:focus {
+        border: none;
+        outline: none;
+      }
+
+      &::placeholder {
+        text-align: center;
+        color: rgba($color: #000000, $alpha: 0.5);
+      }
+    }
+  }
+}

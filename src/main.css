@@ -1,0 +1,314 @@
+.default-button {
+  border-radius: 20px;
+  font-size: 14px;
+  position: relative;
+  overflow: hidden;
+  padding: 8px 20px;
+  text-align: center;
+  border: none;
+  white-space: nowrap;
+  z-index: 0;
+  cursor: pointer;
+}
+.default-button::before {
+  position: absolute;
+  content: "";
+  background: #7aa38d;
+  transition-duration: 0.3s;
+  z-index: -1;
+  inset: 0px 0px auto auto;
+  width: 0px;
+  height: 100%;
+  opacity: 1;
+}
+.default-button:hover::before {
+  width: 50%;
+  height: 100%;
+  opacity: 1;
+}
+.default-button {
+  color: #000;
+  transition: color 0.3s ease 0s, background 0s ease 0s;
+}
+.default-button:hover {
+  color: rgb(0, 0, 0);
+  background: #7aa38d;
+  transition: color 0.3s ease 0s, background 0s ease 0.3s;
+}
+.default-button::after {
+  position: absolute;
+  content: "";
+  background: #7aa38d;
+  transition-duration: 0.3s;
+  z-index: -1;
+  inset: 0px auto auto 0px;
+  width: 0px;
+  height: 100%;
+  opacity: 1;
+}
+.default-button:hover::after {
+  width: 50%;
+}
+
+.homepage-button {
+  background-color: #fff;
+  color: #000;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  padding: 8px 20px;
+  margin: 0px 3px 6px;
+  text-align: center;
+  border: 2px solid rgb(255, 255, 255);
+  text-decoration: none;
+  white-space: nowrap;
+  z-index: 0;
+  cursor: pointer;
+}
+.homepage-button i {
+  padding-right: 8px;
+}
+.homepage-button::before {
+  position: absolute;
+  content: "";
+  background: rgb(255, 255, 255);
+  transition-duration: 0.3s;
+  z-index: -1;
+  inset: 0px 0px auto auto;
+  width: 0px;
+  height: 100%;
+  opacity: 1;
+}
+.homepage-button:hover::before {
+  width: 50%;
+  height: 100%;
+  opacity: 1;
+}
+.homepage-button {
+  background: transparent;
+  color: rgb(255, 255, 255);
+  transition: color 0.3s ease 0s, background 0s ease 0s;
+}
+.homepage-button:hover {
+  color: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
+  transition: color 0.3s ease 0s, background 0s ease 0.3s;
+}
+.homepage-button::after {
+  position: absolute;
+  content: "";
+  background: rgb(255, 255, 255);
+  transition-duration: 0.3s;
+  z-index: -1;
+  inset: 0px auto auto 0px;
+  width: 0px;
+  height: 100%;
+  opacity: 1;
+}
+.homepage-button:hover::after {
+  width: 50%;
+}
+
+.sort-button {
+  background-color: transparent;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  overflow: hidden;
+  padding: 8px 20px;
+  margin: 0px 3px 6px;
+  text-align: center;
+  border: 2px solid rgb(255, 255, 255);
+  text-decoration: none;
+  white-space: nowrap;
+  z-index: 0;
+  cursor: pointer;
+}
+.sort-button:after {
+  background: #000;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.2;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  width: 50px;
+  z-index: 10;
+}
+.sort-button:hover:after {
+  left: 120%;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.icon-button {
+  font-size: larger;
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/
+   v5.0.2 | 20191019
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+/* HTML5 hidden-attribute fix for newer browsers */
+*[hidden] {
+  display: none;
+}
+
+body {
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+}
+a:visited {
+  color: none;
+}
+
+menu, ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.homepage {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #81b29a;
+  height: 100vh;
+}
+.homepage__wrapper {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  height: 100%;
+}
+.homepage__content-logo {
+  font-size: 17rem;
+  letter-spacing: -6px;
+  font-weight: 1000;
+  margin-bottom: 1.2rem;
+  user-select: none;
+}
+@media (max-width: 768px) {
+  .homepage {
+    height: 100vh;
+    width: 100%;
+  }
+  .homepage__content-logo {
+    font-size: 5rem;
+    letter-spacing: -2px;
+    font-weight: 1000;
+    user-select: none;
+  }
+}
+
+.sorter {
+  display: flex;
+  justify-content: center;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #81b29a;
+  height: 100vh;
+}
+.sorter__wrapper {
+  text-align: center;
+}
+.sorter__header {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  color: red;
+}
+.sorter__header a {
+  color: black;
+}
+.sorter__logo {
+  margin: 0;
+  cursor: pointer;
+  letter-spacing: -1px;
+  font-size: 3em;
+  font-weight: 1000;
+}
+.sorter__divider {
+  width: 100%;
+  left: 0;
+  position: fixed;
+}
+.sorter__content {
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+.sorter__content--output-container, .sorter__content--input-container {
+  border: 2px solid #000;
+  margin: 20px;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+.sorter__content-textarea {
+  background: transparent;
+  border: none;
+  resize: none;
+  font-size: 16px;
+  font-weight: 500;
+  max-height: 80vh;
+}
+.sorter__content-textarea:focus {
+  border: none;
+  outline: none;
+}
+.sorter__content-textarea::placeholder {
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/*# sourceMappingURL=main.css.map */
