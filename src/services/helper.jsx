@@ -1,48 +1,48 @@
-export function sortToUpperCase(inputText) {
+function sortToUpperCase(inputText, setOutputText) {
     let newText = inputText.trim().split("\n");
     if (deleteSpace) {
         newText = newText.filter(item => item !== '');
     }
-    return newText.join("\n").toUpperCase();
+    setOutputText(newText.join("\n").toUpperCase())
 }
 
-export function sortToLowerCase(inputText) {
+function sortToLowerCase(inputText, setOutputText) {
     let newText = inputText.trim().split("\n");
     if (deleteSpace) {
         newText = newText.filter(item => item !== '');
     }
-    return newText.join("\n").toLowerCase();
+    setOutputText(newText.join("\n").toLowerCase())
 };
 
-export function sortToSortAToZ(inputText) {
+function sortToSortAToZ(inputText, setOutputText) {
     let sortedList = inputText.trim().split('\n');
     if (deleteSpace) {
         sortedList = sortedList.map(item => item.trim()).filter(item => item !== '');
     }
 
     sortedList.sort();
-    return sortedList.join('\n');
+    setOutputText(sortedList.join('\n'))
 };
-export function sortToSortZToA(inputText) {
+function sortToSortZToA(inputText, setOutputText) {
     let sortedList = inputText.trim().split('\n');
     if (deleteSpace) {
         sortedList = sortedList.map(item => item.trim()).filter(item => item !== '');
     }
 
     sortedList.sort().reverse();
-    return sortedList.join('\n');
+    setOutputText(sortedList.join('\n'))
 };
 
-export function sortToSortRandom(inputText) {
+function sortToSortRandom(inputText, setOutputText) {
     let sortedList = inputText.trim().split('\n');
     if (deleteSpace) {
         sortedList = sortedList.map(item => item.trim()).filter(item => item !== '');
     }
 
     sortedList.sort(() => Math.random() - 0.5);
-    return sortedList.join('\n');
+    setOutputText(sortedList.join('\n'))
 }
-export function sortToOrderedList(inputText) {
+function sortToOrderedList(inputText, setOutputText) {
     let sortedList = inputText.trim().split('\n');
     if (deleteSpace) {
         sortedList = sortedList.map(item => item.trim()).filter(item => item !== '');
@@ -50,33 +50,48 @@ export function sortToOrderedList(inputText) {
 
     const orderedList = sortedList.sort().map((item, index) => {
         return `${index + 1}. ${item}`
+
     })
-    return (orderedList.join('\n'));
+    setOutputText((orderedList.join('\n')))
 }
 
-export function sortToLongest(inputText) {
+function sortToLongest(inputText, setOutputText) {
     let sortedList = inputText.trim().split('\n');
     if (deleteSpace) {
         sortedList = sortedList.map(item => item.trim()).filter(item => item !== '');
     }
 
     sortedList.sort((a, b) => a.length - b.length).reverse();
-    return sortedList.join('\n');
+    setOutputText(sortedList.join('\n'))
 }
 
-export function sortToShortest(inputText) {
+function sortToShortest(inputText, setOutputText) {
     let sortedList = inputText.trim().split('\n');
     if (deleteSpace) {
         sortedList = sortedList.map(item => item.trim()).filter(item => item !== '');
     }
     sortedList.sort((a, b) => a.length - b.length);
-    return sortedList.join('\n');
+    setOutputText(sortedList.join('\n'))
 }
 
-export function sortToDeleteSame(inputText) {
+function sortToDeleteSame(inputText, setOutputText) {
     let sortedList = inputText.trim().split('\n');
     sortedList = sortedList.map(item => item.trim()).filter(item => item !== '');
     sortedList = sortedList.filter((value, index) => sortedList.indexOf(value) === index)
-    return sortedList.join("\n");
+    setOutputText(sortedList.join("\n"))
 }
 
+export default {
+    sortToUpperCase, sortToLowerCase, sortToSortAToZ, sortToSortZToA, sortToSortRandom, sortToOrderedList, sortToLongest, sortToShortest, sortToDeleteSame,
+}
+
+// // helper.js
+// function sortAlphabetically(value, setResult) {
+//     const sortedList = value.split(" ").sort();
+//     setResult(sortedList);
+// }
+// function shuffle(setResult) {
+//     setResult("Random sıralandı");
+// }
+
+// export default { sortAlphabetically, shuffle };

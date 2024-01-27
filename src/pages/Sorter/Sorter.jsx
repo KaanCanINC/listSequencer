@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
-import * as helper from '../../services/helper';
+import { buttons } from "../../data/actionData"
+import helper from '../../services/helper';
 import Button from '../../components/Button';
-import { LuListOrdered, LuCaseUpper, LuCaseLower, LuIterationCcw } from "react-icons/lu";
-import { FaRandom, FaSortAlphaDown, FaSortAlphaUpAlt, FaSortAmountUp, FaSortAmountDownAlt } from "react-icons/fa";
 
 
 const Sorter = () => {
@@ -21,24 +20,19 @@ const Sorter = () => {
         setDeleteSpace(e.target.checked);
     };
 
-    const handleButtonClick = (handler) => {
-        setOutputText(handler(inputText, deleteSpace));
+    const handleButtonClick = (action) => {
+        return () => {
+            helper[action](inputText, setOutputText);
+        };
     };
-
-    const buttonFunctions = [
-        {
-            action: () => handleButtonClick(helper.sortToUpperCase),
-            label: <LuCaseUpper/>
-        },
-    ]
 
     return (
         <div className='sorter'>
             <div className='sorter__wrapper'>
                 <div className='sorter__header'>
-                    {/* <Link to="/">
+                    <Link to="/">
                         <h1 className="sorter__logo">SORTIFY</h1>
-                    </Link> */}
+                    </Link>
                     <hr color='black' className='sorter__divider' />
                 </div>
 
@@ -55,7 +49,14 @@ const Sorter = () => {
                     </div>
 
                     <div className="sorter__content--buttons-container">
-                        <Button buttons={buttonFunctions} />
+                        {
+                            buttons.map((button, index) =>
+                                <Button
+                                    key={index}
+                                    label={<button.label />}
+                                    onClick={handleButtonClick(button.action)} />
+                            )
+                        }
                     </div>
 
                     <label htmlFor="deleteSpace">
